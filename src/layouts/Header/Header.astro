@@ -1,0 +1,79 @@
+---
+import NavLink from "./NavLink.astro";
+import { RiFacebookFill, RiInstagramFill, RiMenuFill } from "@remixicon/react";
+import logo from "@/assets/svg/logo.svg";
+import isologo from "@/assets/svg/Isologo.svg";
+
+type Props = {};
+
+const {} = Astro.props;
+---
+
+<header
+  id="header"
+  class={`w-full bg-grey-950 bg-opacity-30 fixed top-0 z-30
+    transition-colors delay-300 ease-out
+    lg:bg-opacity-30 lg:transition-none`}
+>
+  <div
+    class="relative flex justify-center items-center container p-2 lg:py-4 lg:px-0 mx-auto gap-4"
+  >
+    <div id="menu-btn" class="p-2 lg:hidden">
+      <RiMenuFill className="fill-grey-50" size={32} />
+    </div>
+
+    <nav
+      id="nav-menu"
+      class={`absolute z-10 w-[100vw] bg-grey-950 bg-opacity-30 lg:bg-transparent
+      h-[calc(100vh-4em)]
+      transition-all delay-300 ease-out
+      lg:transition-none
+      top-[-100vh] lg:top-auto
+      lg:static lg:flex lg:h-full lg:flex-1
+      `}
+    >
+      <ul
+        class="flex flex-col lg:flex-row items-center justify-center
+    w-full py-20 lg:py-0 gap-10"
+      >
+        <NavLink url={"/"} text={"Inicio"} />
+        <NavLink url={"/colecciones"} text={"Colecciones únicas"} />
+        <NavLink url={"/custom-made"} text={"Custom Made"} />
+        <NavLink url={"/conoce"} text={"Conoce ADS Ateleir"} />
+        <NavLink url={"/contacto"} text={"Contacto"} />
+      </ul>
+    </nav>
+
+    <div class="flex justify-center flex-grow lg:flex-grow-0 lg:-order-1">
+      <img src={logo.src} alt="logo mobile" class="max-w-44 lg:hidden" />
+      <img src={isologo.src} alt="logo desk" class="w-20 hidden lg:block" />
+    </div>
+
+    <div class="flex items-center gap-2">
+      <div class="bg-white size-8 rounded-full p-1">
+        <RiInstagramFill className="fill-accent-500" />
+      </div>
+      <div class="bg-white size-8 rounded-full p-1">
+        <RiFacebookFill className="fill-accent-500" />
+      </div>
+    </div>
+  </div>
+</header>
+
+<style></style>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const header = document.getElementById("header");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuBtn &&
+    menuBtn.addEventListener("click", () => {
+      header?.classList.toggle("bg-opacity-80");
+
+      // Clases que activan el mobile menu
+      navMenu?.classList.toggle("top-full");
+      navMenu?.classList.toggle("opacity-100");
+      navMenu?.classList.toggle("bg-opacity-80");
+    });
+</script>

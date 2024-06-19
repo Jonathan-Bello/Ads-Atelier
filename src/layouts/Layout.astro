@@ -1,6 +1,6 @@
 ---
 import GlobalStyles from "@/styles/GlobalStyles.astro";
-import Header from "./Header/Header";
+import Header from "./Header/Header.astro";
 
 interface Props {
   title: string;
@@ -30,7 +30,7 @@ const { title } = Astro.props;
     ></script>
   </head>
   <body>
-    <Header client:only="react" />
+    <Header />
 
     <slot />
   </body>
