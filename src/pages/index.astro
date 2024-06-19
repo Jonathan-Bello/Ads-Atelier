@@ -1,12 +1,12 @@
 ---
 import CarouselMain from "@/components/carousels/CarouselMain.astro";
-import Header from "@/layouts/Header";
 import Layout from "@/layouts/Layout.astro";
+export const prerender = true;
 ---
 
 <Layout title="Inicio">
-  <Header client:only="react" />
-  <CarouselMain />
+  <!-- <CarouselMain /> -->
+  <section class="w-full h-64 bg-red-800"></section>
 </Layout>
 
 <style></style>

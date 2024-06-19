@@ -8,14 +8,15 @@ import useWindowSize from "@/hooks/useWindowSize";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const { width } = useWindowSize();
-  const [scrollNumber, setScrollNumber] = useState(0);
+  // const { width } = useWindowSize();
+  // const [scrollNumber, setScrollNumber] = useState(0);
 
   useEffect(() => {}, []);
 
   return (
     <header
-      className={`w-full bg-grey-950 bg-opacity-30 transition-colors delay-300 ease-out ${
+      className={`w-full bg-grey-950 bg-opacity-30 fixed top-0 z-30
+      transition-colors delay-300 ease-out ${
         showMobileMenu && "bg-opacity-80"
       }
       lg:bg-opacity-30 lg:transition-none`}
@@ -63,7 +64,7 @@ const Header = () => {
         </nav>
 
         <div className="flex justify-center flex-grow lg:flex-grow-0 lg:-order-1">
-          {width > 1023 ? (
+          {window.innerWidth > 1023 ? (
             <img src={isologo.src} alt="logo mobile" className="w-20" />
           ) : (
             <img src={logo.src} alt="logo mobile" className="max-w-44" />
