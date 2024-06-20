@@ -3,6 +3,7 @@ import NavLink from "./NavLink.astro";
 import { RiFacebookFill, RiInstagramFill, RiMenuFill } from "@remixicon/react";
 import logo from "@/assets/svg/logo.svg";
 import isologo from "@/assets/svg/Isologo.svg";
+import HamburgerAnimate from "./HamburgerAnimate.astro";
 
 type Props = {};
 
@@ -18,8 +19,8 @@ const {} = Astro.props;
   <div
     class="relative flex justify-center items-center container p-2 lg:py-4 lg:px-0 mx-auto gap-4"
   >
-    <div id="menu-btn" class="p-2 lg:hidden">
-      <RiMenuFill className="fill-grey-50" size={32} />
+    <div id="menu-btn" class="flex p-2 lg:hidden">
+      <HamburgerAnimate bgColor="bg-trasparent" color="bg-grey-50" />
     </div>
 
     <nav
