@@ -9,22 +9,22 @@ const { bgColor, color } = Astro.props;
 
 <button id="hamburger-btn" class="relative group">
   <div
-    class={`relative flex overflow-visible items-center justify-center w-8 h-w-8
+    class={`relative flex overflow-visible items-center justify-center w-[32px] h-[32px]
     transform transition-all ${bgColor}`}
   >
     <div
-      class="flex flex-col justify-between w-6 h-w-6 transform transition-all duration-300 origin-center overflow-hidden"
+      class="flex flex-col justify-between w-[24px] h-[24px] transform transition-all duration-300 origin-center overflow-hidden"
     >
       <div
-        class={`line ${color} h-[2px] w-6 transform transition-all duration-300 origin-left group-[.actived]:translate-x-10`}
+        class={`${color} h-[2px] w-6 transform transition-all duration-300 origin-left group-[.actived]:translate-x-10`}
       >
       </div>
       <div
-        class={`line ${color} h-[2px] w-6 transform transition-all duration-300 group-[.actived]:translate-x-10 delay-75`}
+        class={`${color} h-[2px] w-6 transform transition-all duration-300 group-[.actived]:translate-x-10 delay-75`}
       >
       </div>
       <div
-        class={`line ${color} h-[2px] w-6 transform transition-all duration-300 origin-left group-[.actived]:translate-x-10 delay-150`}
+        class={`${color} h-[2px] w-6 transform transition-all duration-300 origin-left group-[.actived]:translate-x-10 delay-150`}
       >
       </div>
 
@@ -34,12 +34,12 @@ const { bgColor, color } = Astro.props;
         group-[.actived]:translate-x-0 flex w-0 group-[.actived]:w-6"
       >
         <div
-          class={`cross-line absolute ${color} h-[2px] w-6
+          class={`absolute ${color} h-[2px] w-6
           transform transition-all duration-500 rotate-0 delay-300 group-[.actived]:rotate-45`}
         >
         </div>
         <div
-          class={`cross-line absolute ${color} h-[2px] w-6
+          class={`absolute ${color} h-[2px] w-6
           transform transition-all duration-500 -rotate-0 delay-300 group-[.actived]:-rotate-45`}
         >
         </div>
