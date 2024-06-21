@@ -12,7 +12,8 @@ const {} = Astro.props;
 
 <header
   id="header"
-  class={`w-full bg-grey-950 bg-opacity-30 fixed top-0 z-30
+  class={`w-full bg-grey-950 bg-opacity-30 blur-background
+    fixed top-0 z-30
     transition-colors delay-300 ease-out
     lg:bg-opacity-30 lg:transition-none`}
 >
@@ -61,7 +62,19 @@ const {} = Astro.props;
   </div>
 </header>
 
-<style></style>
+<style>
+  .blur-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(2px); /* Aplica el blur */
+    -webkit-backdrop-filter: blur(2px); /* Soporte para Safari */
+    z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
+  }
+</style>
 
 <script>
   const menuBtn = document.getElementById("menu-btn");
