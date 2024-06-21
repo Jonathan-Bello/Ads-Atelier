@@ -20,5 +20,5 @@
   },
   "peacock.color": "#C39C4C",
   "cSpell.enableFiletypes": ["astro"],
-  "cSpell.words": ["swiper"]
+  "cSpell.words": ["prerender", "swiper"]
 }
