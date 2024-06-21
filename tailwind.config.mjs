@@ -5,7 +5,7 @@ export default {
     extend: {
       fontFamily: {
         sans: '"Alegreya Sans", sans-serif',
-        title: "Carla Sans",
+        title: '"Playfair Display", serif',
       },
       colors: {
         primary: {

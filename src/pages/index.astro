@@ -2,11 +2,33 @@
 import CarouselMain from "@/components/carousels/CarouselMain.astro";
 import Layout from "@/layouts/Layout.astro";
 export const prerender = true;
+import imgHands from "@/assets/img/home/hands.webp";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Inicio">
   <CarouselMain />
-  <section class="w-full h-64 bg-red-800"></section>
+
+  <section class="container flex items-center">
+    <div class="bg-white mx-4 my-12 px-2 py-12">
+      <h1
+        class="text-title text-primary-500 text-center text-4xl font-semibold"
+      >
+        ADS Atelier Manifiesto
+      </h1>
+
+      <Image src={imgHands} alt={"hands"} />
+
+      <p>
+        <b>ADS Atelier</b> es una estudio de <b
+          >joyería fina basado en la Ciudad de México</b
+        >
+        donde creamos piezas elegantes y contemporáneas que complementen tu estilo
+        propio. Nació con la idea de crear piezas de alta calidad, diseñadas para
+        usarlas en tu día a día.
+      </p>
+    </div>
+  </section>
 </Layout>
 
 <style></style>

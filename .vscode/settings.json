@@ -18,5 +18,7 @@
     "titleBar.inactiveBackground": "#c39c4c99",
     "titleBar.inactiveForeground": "#15202b99"
   },
-  "peacock.color": "#C39C4C"
+  "peacock.color": "#C39C4C",
+  "cSpell.enableFiletypes": ["astro"],
+  "cSpell.words": ["swiper"]
 }
