@@ -1,0 +1,28 @@
+---
+import { RiArrowRightUpLine } from "@remixicon/react";
+
+type Props = {
+  classColor: string;
+  labelText: string;
+  text: string;
+  url: string;
+};
+
+const { classColor, labelText, text, url } = Astro.props;
+---
+
+<div class={`${classColor}`}>
+  <span class="text-base opacity-80">{labelText}</span>
+
+  <div class="flex">
+    <div class="flex-1">
+      <a class="text-xl font-medium" href={url}>{text}</a>
+    </div>
+
+    <a href={url}>
+      <RiArrowRightUpLine className={classColor} />
+    </a>
+  </div>
+</div>
+
+<style></style>

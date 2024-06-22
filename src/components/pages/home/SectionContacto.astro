@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import imgContacto from "@/assets/img/home/contacto.webp";
+import LinkContact from "@/components/links/LinkContact.astro";
+import { RiArrowRightLine } from "@remixicon/react";
+---
+
+<section class="w-full bg-primary-100 flex flex-col items-center">
+  <div class="container px-4 py-12 flex flex-col lg:flex-row lg:gap-12 lg:mb-8">
+    <div class="lg:flex-1 lg:flex lg:flex-col lg:pt-12 lg:gap-10">
+      <h2 class="text-title text-primary-700 text-4xl mb-12 lg:mb-8">
+        Contáctanos para cotizar tu siguiente pieza de joyería
+      </h2>
+
+      <div class="flex flex-col gap-8 mb-8 lg:mb-0 lg:gap-12">
+        <LinkContact
+          classColor="text-primary-600"
+          labelText="E-mail"
+          text="contacto@adsatelier.mx"
+          url="mailto:contacto@adsatelier.mx"
+        />
+        <LinkContact
+          classColor="text-primary-600"
+          labelText="Whatsapp"
+          text="+52 55 4099 6380"
+          url="https://api.whatsapp.com/send?phone=5215540996380"
+        />
+        <LinkContact
+          classColor="text-primary-600"
+          labelText="Instagram"
+          text="@ads.atelier"
+          url="https://www.instagram.com/ads.atelier/"
+        />
+      </div>
+    </div>
+
+    <Image
+      class={"lg:w-[32rem] xl:w-[46rem] lg:-order-1"}
+      src={imgContacto}
+      alt="pensando en anillos"
+    />
+  </div>
+
+  <div class="container px-4 flex justify-between items-center">
+    <h2 class="text-title text-3xl text-secondary-500">
+      Síguenos en Instagram
+    </h2>
+
+    <a
+      href="https://www.instagram.com/ads.atelier/"
+      class="hidden lg:flex font-title text-lg font-medium text-secondary-500 gap-2 items-center"
+    >
+      Ir a Instagram <RiArrowRightLine />
+    </a>
+  </div>
+</section>
+
+<style></style>
