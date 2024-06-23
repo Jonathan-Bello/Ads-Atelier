@@ -2,6 +2,7 @@
 import { ViewTransitions } from "astro:transitions";
 import GlobalStyles from "@/styles/GlobalStyles.astro";
 import Header from "./Header/Header.astro";
+import Footer from "./Footer.astro";
 
 interface Props {
   title: string;
@@ -42,6 +43,8 @@ const { title } = Astro.props;
     <main class="flex flex-col items-center">
       <slot />
     </main>
+
+    <Footer />
     <GlobalStyles />
   </body>
 </html>
