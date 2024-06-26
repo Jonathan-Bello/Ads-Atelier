@@ -57,30 +57,31 @@ bg-primary-100">
 <script>
   // swiper element
   const swiperEl = document.querySelector("#swiper-insta");
-
-  // swiper parameters
-  const swiperParams = {
-    slidesPerView: 1,
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 16,
+  if (swiperEl) {
+    // swiper parameters
+    const swiperParams = {
+      slidesPerView: 1,
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
       },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 20,
+      on: {
+        init() {
+          // ...
+        },
       },
-    },
-    on: {
-      init() {
-        // ...
-      },
-    },
-  };
+    };
 
-  // now we need to assign all parameters to Swiper element
-  Object.assign(swiperEl, swiperParams);
+    // now we need to assign all parameters to Swiper element
+    Object.assign(swiperEl, swiperParams);
 
-  // and now initialize it
-  swiperEl.initialize();
+    // and now initialize it
+    swiperEl.initialize();
+  }
 </script>
