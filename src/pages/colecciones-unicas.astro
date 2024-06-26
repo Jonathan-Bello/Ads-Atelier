@@ -1,0 +1,53 @@
+---
+import BannerTitleCenter from "@/components/banners/BannerTitleCenter.astro";
+import Layout from "@/layouts/Layout.astro";
+
+import imgBanner1 from "@/assets/img/colecciones/bannerImg.webp";
+import imgBanner2 from "@/assets/img/colecciones/bannerImg2.webp";
+import imgRings from "@/assets/img/colecciones/rings.webp";
+import imgBooks from "@/assets/img/colecciones/books.webp";
+import { Image } from "astro:assets";
+---
+
+<Layout title="Colecciones únicas">
+  <BannerTitleCenter
+    title="Colecciones de joyería fina para el día a día"
+    subTitle="Creamos colecciones inspiradas en la simplicidad y minimalismo elaboradas con metales preciosos para que las puedas disfrutar todos los días."
+    imgLeft={imgBanner1}
+    imgRight={imgBanner2}
+  />
+
+  <section class="bg-accent-50 w-full flex flex-col justify-center relative">
+    <div class="container px-4 flex flex-col items-center z-10">
+      <p class="py-10 px-4 bg-accent-300 text-white text-base font-light">
+        Nos inspiramos en el arte de la orfebrería, los materiales y las
+        características de las piedras para crear piezas y colecciones de
+        edición limitada.
+      </p>
+    </div>
+
+    <div
+      class="bg-accent-50 w-full relative -top-8 flex justify-between flex-wrap gap-4 overflow-hidden"
+    >
+      <Image
+        class={"w-1/2 object-cover max-h-64 self-end"}
+        src={imgRings}
+        alt={"anillos"}
+      />
+      <Image
+        class={"w-1/2 object-cover  max-h-64 self-start"}
+        src={imgBooks}
+        alt={"libros"}
+      />
+
+      <div class="w-full">
+        <h2>Contacta con nosotros</h2>
+        <p>para consultar la disponibilidad de las piezas.</p>
+
+        <a href="/contacto">Contactanos</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style></style>
