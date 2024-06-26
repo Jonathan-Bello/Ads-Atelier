@@ -14,7 +14,7 @@ async function fetchInstagramData(url: string) {
   }
 }
 
-const url = "https://graph.instagram.com/me/media?fields=";
+const url = `https://graph.instagram.com/me/media?fields=media_url,caption,permalink,timestamp&access_token=${import.meta.env.INSTAGRAM_TOKEN}`;
 const postsInstagram = await fetchInstagramData(url);
 ---
 
