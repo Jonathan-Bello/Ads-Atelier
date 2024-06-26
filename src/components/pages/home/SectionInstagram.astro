@@ -14,8 +14,7 @@ async function fetchInstagramData(url: string) {
   }
 }
 
-const url =
-  "https://graph.instagram.com/me/media?fields=media_url,caption,permalink,timestamp&access_token=IGQWROUG1lMzBmNjN3Umd0SWNGSjRoX25kd1FNdW1OR0NhdFpMQ2ZAkWEFmV0UtRnJtNUt4azhxYTBTczdzNzJZAd19HcUpOeDZApZAHpQOXQxYmhPMmJ5Rjh1aUFiQklZAS2NrUVhDZAG05ZAmNYaDN2UmFhNjFlb3c3dlEZD";
+const url = `https://graph.instagram.com/me/media?fields=media_url,caption,permalink,timestamp&access_token=${import.meta.env.INSTAGRAM_TOKEN}`;
 const postsInstagram = await fetchInstagramData(url);
 ---
 
