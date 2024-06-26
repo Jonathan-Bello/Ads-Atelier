@@ -1,0 +1,86 @@
+---
+import { RiArrowRightLine } from "@remixicon/react";
+
+type InstaPost = {
+  id: string;
+  timestamp: Date;
+  permalink: string;
+  caption: string;
+  media_url: string;
+};
+
+type Props = {
+  posts: Array<InstaPost>;
+};
+
+const { posts } = Astro.props;
+
+const lastPost = posts.slice(0, 3);
+---
+
+<section class="w-full h-full max-h-[100vh] min-h-0 min-w-0
+bg-primary-100">
+  <div class="container px-4 pt-8 mx-auto">
+    <swiper-container
+      init="false"
+      id="swiper-insta"
+      loop="true"
+      autoplay-delay="2500"
+      class="mb-4"
+    >
+      {
+        lastPost.map((post) => (
+          <swiper-slide>
+            <div class="flex justify-start">
+              <a class={"sm:w-full "} href={post.permalink} target="_blank">
+                <img src={post.media_url} alt={"banner img"} />
+              </a>
+            </div>
+          </swiper-slide>
+        ))
+      }
+    </swiper-container>
+
+    <div class="flex gap-2 justify-center mb-8 lg:hidden">
+      <a
+        href="https://www.instagram.com/ads.atelier/"
+        target="_blank"
+        class="text-secondary-500 font-title lg:text-base">Ir a Instagram</a
+      >
+      <RiArrowRightLine className="text-secondary-500" />
+    </div>
+  </div>
+</section>
+
+<style></style>
+
+<script>
+  // swiper element
+  const swiperEl = document.querySelector("#swiper-insta");
+
+  // swiper parameters
+  const swiperParams = {
+    slidesPerView: 1,
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 16,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
+    on: {
+      init() {
+        // ...
+      },
+    },
+  };
+
+  // now we need to assign all parameters to Swiper element
+  Object.assign(swiperEl, swiperParams);
+
+  // and now initialize it
+  swiperEl.initialize();
+</script>

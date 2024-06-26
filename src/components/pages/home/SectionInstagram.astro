@@ -1,0 +1,26 @@
+---
+import Carouselnstagram from "@/components/carousels/Carouselnstagram.astro";
+
+async function fetchInstagramData(url: string) {
+  try {
+    let response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+    let data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("There has been a problem with your fetch operation:", error);
+  }
+}
+
+const url =
+  "https://graph.instagram.com/me/media?fields=media_url,caption,permalink,timestamp&access_token=IGQWROUG1lMzBmNjN3Umd0SWNGSjRoX25kd1FNdW1OR0NhdFpMQ2ZAkWEFmV0UtRnJtNUt4azhxYTBTczdzNzJZAd19HcUpOeDZApZAHpQOXQxYmhPMmJ5Rjh1aUFiQklZAS2NrUVhDZAG05ZAmNYaDN2UmFhNjFlb3c3dlEZD";
+const postsInstagram = await fetchInstagramData(url);
+---
+
+{postsInstagram ? <Carouselnstagram posts={postsInstagram.data} /> : ""}
+
+<style></style>
+
+<script></script>
