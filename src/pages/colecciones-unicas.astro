@@ -17,9 +17,14 @@ import { Image } from "astro:assets";
     imgRight={imgBanner2}
   />
 
-  <section class="bg-accent-50 w-full flex flex-col justify-center relative">
-    <div class="container px-4 flex flex-col items-center z-10">
-      <p class="py-10 px-4 bg-accent-300 text-white text-base font-light">
+  <section class="bg-accent-50 w-full flex flex-col items-center relative">
+    <div
+      class="container px-4 lg:px-0 lg:pt-12 flex flex-col items-center lg:items-start z-10"
+    >
+      <p
+        class="py-10 px-4 xl:px-16 xl:py-16 bg-accent-300
+        text-white text-base lg:text-xl font-light lg:w-[65%]"
+      >
         Nos inspiramos en el arte de la orfebrería, los materiales y las
         características de las piedras para crear piezas y colecciones de
         edición limitada.
@@ -27,24 +32,37 @@ import { Image } from "astro:assets";
     </div>
 
     <div
-      class="bg-accent-50 w-full relative -top-8 flex justify-between flex-wrap gap-4 overflow-hidden"
+      class="container bg-accent-50 w-full relative -top-8 lg:-top-40 xl:-top-52
+      flex flex-col justify-between flex-wrap overflow-hidden
+      lg:relative"
     >
       <Image
-        class={"w-1/2 object-cover max-h-64 self-end"}
-        src={imgRings}
-        alt={"anillos"}
-      />
-      <Image
-        class={"w-1/2 object-cover  max-h-64 self-start"}
+        class={"w-[48%] lg:w-[40%] object-cover max-h-64 md:max-h-none self-end"}
         src={imgBooks}
         alt={"libros"}
       />
+      <Image
+        class={`w-[48%] lg:w-[40%] object-cover max-h-64 md:max-h-none self-start
+        -mt-10 md:-mt-60 lg:-mt-[20rem] xl:-mt-[28rem] 2xl:-mt-[36rem]`}
+        src={imgRings}
+        alt={"anillos"}
+      />
 
-      <div class="w-full">
-        <h2>Contacta con nosotros</h2>
-        <p>para consultar la disponibilidad de las piezas.</p>
+      <div
+        class="w-full lg:w-[40%] px-4 lg:px-0 pt-8 lg:absolute bottom-0 right-0"
+      >
+        <h2 class="font-bold text-2xl lg:text-3xl mb-2">
+          Contacta con nosotros
+        </h2>
+        <p class="font-light text-base lg:text-lx xl:text-2xl mb-4">
+          para consultar la disponibilidad de las piezas.
+        </p>
 
-        <a href="/contacto">Contactanos</a>
+        <a
+          href="/contacto"
+          class="inline-block px-10 py-4 bg-accent-400 text-white text-base lg:text-xl font-medium rounded-full"
+          >Contactanos</a
+        >
       </div>
     </div>
   </section>
