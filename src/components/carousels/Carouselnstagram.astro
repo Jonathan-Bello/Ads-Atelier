@@ -16,30 +16,28 @@ type Props = {
 const { posts } = Astro.props;
 
 const lastPost = posts.slice(0, 3);
+
+import "swiper/css";
 ---
 
 <section class="w-full h-full max-h-[100vh] min-h-0 min-w-0
 bg-primary-100">
-  <div class="container px-4 pt-8 mx-auto mb-8 lg:mb-20">
-    <swiper-container
-      init="false"
-      id="swiper-insta"
-      loop="true"
-      autoplay-delay="2500"
-      class="mb-4"
-    >
-      {
-        lastPost.map((post) => (
-          <swiper-slide>
-            <div class="flex justify-start">
-              <a class={"sm:w-full "} href={post.permalink} target="_blank">
-                <img src={post.media_url} alt={"banner img"} />
-              </a>
+  <div class="container px-4 pt-8 lg:pt-12 mx-auto mb-8 lg:mb-20">
+    <div class="swiper instaSwiper mb-4">
+      <div class="swiper-wrapper">
+        {
+          lastPost.map((post) => (
+            <div class="swiper-slide">
+              <div class="flex justify-start">
+                <a class={"sm:w-full "} href={post.permalink} target="_blank">
+                  <img src={post.media_url} alt={"banner img"} />
+                </a>
+              </div>
             </div>
-          </swiper-slide>
-        ))
-      }
-    </swiper-container>
+          ))
+        }
+      </div>
+    </div>
 
     <div class="flex gap-2 justify-center lg:hidden">
       <a
@@ -52,39 +50,25 @@ bg-primary-100">
   </div>
 </section>
 
-<style></style>
-
-<script src="./swiperInstaConfig.js"></script>
-
 <script>
-  // // swiper element
-  // const swiperEl = document.querySelector("#swiper-insta");
-  // if (swiperEl) {
-  //   // swiper parameters
-  //   const swiperParams = {
-  //     slidesPerView: 1,
-  //     breakpoints: {
-  //       640: {
-  //         slidesPerView: 2,
-  //         spaceBetween: 16,
-  //       },
-  //       1024: {
-  //         slidesPerView: 3,
-  //         spaceBetween: 20,
-  //       },
-  //     },
-  //     on: {
-  //       init() {
-  //         console.log("iniciado");
-  //       },
-  //     },
-  //   };
+  // import Swiper bundle with all modules installed
+  import Swiper from "swiper/bundle";
 
-  //   // now we need to assign all parameters to Swiper element
-  //   Object.assign(swiperEl, swiperParams);
+  // import styles bundle
+  import "swiper/css/bundle";
 
-  //   // and now initialize it
-  //   swiperEl.initialize();
-  //   // console.log("INICIALIZADO");
-  // }
+  new Swiper(".instaSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      },
+    },
+  });
 </script>
