@@ -18,7 +18,7 @@ const url = `https://graph.instagram.com/me/media?fields=media_url,caption,perma
 const postsInstagram = await fetchInstagramData(url);
 ---
 
-{postsInstagram ? <Carouselnstagram posts={postsInstagram.data} /> : ""}
+{postsInstagram ? <Carouselnstagram posts={postsInstagram.data} /> : "no se obtuvo"}
 
 <style></style>
 
