@@ -8,7 +8,6 @@ const { id, imagesList } = Astro.props;
 
 import { RiCloseLargeLine } from "@remixicon/react";
 import { Image } from "astro:assets";
-import "swiper/css";
 ---
 
 <section
@@ -36,10 +35,10 @@ bg-grey-900 bg-opacity-80 justify-center items-center"
       </div>
 
       <div class="relative top-10 md:static">
-        <div class="swiper-button-prev after:text-grey-50 after:content-['next']"></div>
+        <div class="swiper-button-prev after:text-grey-50 after:content-['prev']"></div>
       </div>
       <div class="relative top-10 md:static">
-        <div class="swiper-button-next after:text-grey-50"></div>
+        <div class="swiper-button-next after:text-grey-50 after:content-['next']"></div>
       </div>
     </div>
   </div>
