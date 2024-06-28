@@ -57,7 +57,7 @@ bg-grey-900 bg-opacity-80 justify-center items-center"
   // import styles bundle
   import "swiper/css/bundle";
 
-  document.addEventListener("astro:after-swap", (ev) => {
+  document.addEventListener("astro:page-load", (ev) => {
     // import Swiper bundle with all modules installed
 
     new Swiper(".categoriaSwiper", {
