@@ -1,0 +1,50 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import BannerTitleCenter from "@/components/banners/BannerTitleCenter.astro";
+
+import imgBanner1 from "@/assets/img/nosotros/bannerImg.webp";
+import imgBanner2 from "@/assets/img/nosotros/bannerImg2.webp";
+import imgNoteBook from "@/assets/img/nosotros/notebook.webp";
+import { Image } from "astro:assets";
+---
+
+<Layout title="Colecciones únicas">
+  <BannerTitleCenter
+    title="El corazón detrás de las joyas"
+    subTitle={`Nuestra fascinación por la orfebrería nos llevó a enamorarnos del proceso de diseñar y crear joyería fina.
+    <br />
+    <br />
+    Creemos que hoy, más que nunca, debemos pensar en tener objetos que representen el valor artesanal y la calidad de los materiales. Por ello, diseñamos colecciones atemporales que te acompañarán en tu día a día, todos los días.`}
+    imgLeft={imgBanner1}
+    imgRight={imgBanner2}
+  />
+
+  <section class="w-full bg-accent-50 flex justify-center">
+    <div class="container lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl flex flex-col md:flex-row px-4 py-8 relative">
+      <Image class={"w-full md:w-auto"} src={imgNoteBook} alt={"notebook"} />
+
+      <div
+        class="mx-4 px-4 py-8 md:px-16 md:py-12 bg-primary-300 text-white
+        relative md:absolute -top-8 md:right-0 md:top-1/2 md:transform md:-translate-y-1/2 md:w-3/4"
+      >
+        <p class="text-base md:text-xl font-light mb-2">
+          Nos encanta cuidar todos los detalles del proceso, desde la etapa de
+          diseño, hasta que las piezas lleguen a las manos y corazones de
+          nuestros clientes.
+        </p>
+        <p class="text-base md:text-xl font-light mb-6">
+          El trabajo hecho a manos es y será lo que siempre nos inspire para
+          crear piezas únicas que puedas disfrutar tú y las siguientes
+          generaciones.
+        </p>
+
+        <p class="text-xl md:text-2xl font-title tracking-wide font-light">
+          Todas las piezas son diseñadas y creadas in house en nuestro estudio
+          de la Ciudad de México con la ayuda de artesanos joyeros mexicanos.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style></style>

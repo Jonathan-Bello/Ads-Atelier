@@ -24,18 +24,18 @@ const { title, subTitle, imgLeft, imgRight } = Astro.props;
       </h1>
       <p
         class="hidden sm:flex w-full text-center text-base lg:text-xl font-light mt-4"
-      >
-        {subTitle}
-      </p>
+        set:html={subTitle}
+      />
     </div>
     <div class="w-1/4">
       <Image src={imgRight} alt={"imgRight"} />
     </div>
 
-    <p class="sm:hidden w-full text-center text-base font-light mt-4">
-      {subTitle}
-    </p>
+    <p
+      class="sm:hidden w-full text-center text-base font-light mt-4"
+      set:html={subTitle}
+    />
   </div>
-</section>
 
-<style></style>
+  <style></style>
+</section>
