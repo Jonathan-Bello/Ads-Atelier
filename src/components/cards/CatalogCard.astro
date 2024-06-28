@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+
+type Props = {
+  id: string;
+  title: string;
+  imgBg: ImageMetadata;
+};
+
+const { id, title, imgBg } = Astro.props;
+---
+
+<article
+  id={id}
+  class="relative group border-b-4 border-secondary-500 max-h-[540px] overflow-hidden
+    hover:cursor-pointer hover:rounded-t-full hover:border-secondary-200 transition-[border-radius] duration-500 ease-[cubic-bezier(0.95,0.05,0.795,0.035)]"
+>
+  <Image class={`object-center`} src={imgBg} alt={title} />
+
+  <div
+    class="absolute inset-0 h-full w-full z-10
+    bg-gradient-to-b from-transparent to-[#ffffff83] group-hover:to-transparent
+    group-hover:bg-secondary-600 group-hover:bg-opacity-80"
+  >
+    <div
+      class="absolute bottom-[5%] right-0 left-0 px-1 lg:px-3 flex flex-col items-center
+      translate-y-10 group-hover:translate-y-0 transition-transform duration-300"
+    >
+      <h3
+        class="text-title text-center text-secondary-600 mb-2 transition-transition
+        text-base lg:text-lg xl:text-xl lg:italic uppercase
+        group-hover:text-accent-50"
+      >
+        {title}
+      </h3>
+
+      <a
+        href="#"
+        class="text-center text-base text-accent-50 text-red-900 underline"
+        >Ver más</a
+      >
+    </div>
+  </div>
+</article>
+
+<style></style>
+
+<script></script>

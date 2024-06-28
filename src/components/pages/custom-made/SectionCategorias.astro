@@ -1,0 +1,44 @@
+---
+import CatalogCard from "@/components/cards/CatalogCard.astro";
+import imgCompromiso from "@/assets/img/custom/compromiso.webp";
+import imgJoyeria from "@/assets/img/custom/joyeria.webp";
+import imgMatrimonio from "@/assets/img/custom/matrimonio.webp";
+import imgRediseno from "@/assets/img/custom/rediseno.webp";
+
+type Props = {};
+
+const {} = Astro.props;
+---
+
+<section class="w-full bg-secondary-300 flex justify-center">
+  <div class="container px-4 py-8 lg:py-12 flex flex-col justify-center">
+    <h2 class="text-title text-center text-white text-3xl lg:text-5xl mb-6 lg:mb-12">
+      Tenemos la pieza que buscas
+    </h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-5">
+      <CatalogCard
+        id="card-compromiso"
+        title="Anillos de compromiso"
+        imgBg={imgCompromiso}
+      />
+      <CatalogCard
+        id="card-matrimonio"
+        title="Argollas de matrimonio"
+        imgBg={imgMatrimonio}
+      />
+      <CatalogCard
+        id="card-joyeria"
+        title="Creación de joyería fina"
+        imgBg={imgJoyeria}
+      />
+      <CatalogCard
+        id="card-custom"
+        title="Rediseño de piezas antiguas"
+        imgBg={imgRediseno}
+      />
+    </div>
+  </div>
+</section>
+
+<style></style>

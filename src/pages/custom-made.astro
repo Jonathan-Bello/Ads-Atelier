@@ -1,0 +1,21 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import BannerTitleCenter from "@/components/banners/BannerTitleCenter.astro";
+
+import imgBanner1 from "@/assets/img/custom/bannerImg.webp";
+import imgBanner2 from "@/assets/img/custom/bannerImg2.webp";
+import SectionCategorias from "@/components/pages/custom-made/SectionCategorias.astro";
+---
+
+<Layout title="Colecciones únicas">
+  <BannerTitleCenter
+    title="Piezas únicas para los momentos más especiales de tu vida"
+    subTitle="Para nosotros, la joyería representa el vínculo que tienes con otras personas, un recordatorio de eventos importantes o una historia lista para ser contada."
+    imgLeft={imgBanner1}
+    imgRight={imgBanner2}
+  />
+
+  <SectionCategorias />
+</Layout>
+
+<style></style>
