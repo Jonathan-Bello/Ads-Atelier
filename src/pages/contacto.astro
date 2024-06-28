@@ -4,6 +4,8 @@ import Layout from "@/layouts/Layout.astro";
 
 import imgBanner from "@/assets/img/contacto/bannerImg.webp";
 import LinkContact from "@/components/links/LinkContact.astro";
+import SectionInstagram from "@/components/pages/home/SectionInstagram.astro";
+import { RiArrowRightLine } from "@remixicon/react";
 ---
 
 <Layout title="Contacto">
@@ -41,6 +43,24 @@ import LinkContact from "@/components/links/LinkContact.astro";
       </div>
     </div>
   </section>
+
+  <section class="bg-primary-100 w-full flex justify-center pt-8 lg:pt-16">
+    <div class="container px-4 flex justify-between items-end">
+      <h2
+        class="text-title text-3xl lg:text-5xl lg:leading-[3.7rem] text-secondary-500"
+      >
+        Síguenos en Instagram
+      </h2>
+
+      <a
+        href="https://www.instagram.com/ads.atelier/"
+        class="hidden lg:flex font-title text-lg font-medium text-secondary-500 gap-2 items-center"
+      >
+        Ir a Instagram <RiArrowRightLine />
+      </a>
+    </div>
+  </section>
+  <SectionInstagram />
 </Layout>
 
 <style></style>
