@@ -1,5 +1,5 @@
 ---
-import Carouselnstagram from "@/components/carousels/Carouselnstagram.astro";
+import Carouselnstagram from "@/components/carousels/Carouselnstagram";
 
 async function fetchInstagramData(url: string) {
   try {
@@ -18,7 +18,13 @@ const url = `https://graph.instagram.com/me/media?fields=media_url,caption,perma
 const postsInstagram = await fetchInstagramData(url);
 ---
 
-{postsInstagram ? <Carouselnstagram posts={postsInstagram.data} /> : <br />}
+{
+  postsInstagram ? (
+    <Carouselnstagram client:visible posts={postsInstagram.data} />
+  ) : (
+    <br />
+  )
+}
 
 <style></style>
 

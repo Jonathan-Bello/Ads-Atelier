@@ -53,31 +53,34 @@ import {
 </section>
 
 <script>
-  const cardCompromiso = document.getElementById("card-compromiso");
-  const modalCompromiso = document.getElementById("modal-compromiso");
+  document.addEventListener("astro:after-swap", (ev) => {
+    const cardCompromiso = document.getElementById("card-compromiso");
+    const modalCompromiso = document.getElementById("modal-compromiso");
 
-  cardCompromiso?.addEventListener("click", () => {
-    modalCompromiso?.classList.add("modal-active");
-  });
+    cardCompromiso?.addEventListener("click", () => {
+      console.log("red");
+      modalCompromiso?.classList.add("modal-active");
+    });
 
-  const cardMatrimonio = document.getElementById("card-matrimonio");
-  const modalMatrimonio = document.getElementById("modal-matrimonio");
+    const cardMatrimonio = document.getElementById("card-matrimonio");
+    const modalMatrimonio = document.getElementById("modal-matrimonio");
 
-  cardMatrimonio?.addEventListener("click", () => {
-    modalMatrimonio?.classList.add("modal-active");
-  });
+    cardMatrimonio?.addEventListener("click", () => {
+      modalMatrimonio?.classList.add("modal-active");
+    });
 
-  const cardJoyeria = document.getElementById("card-joyeria");
-  const modalJoyeria = document.getElementById("modal-joyeria");
+    const cardJoyeria = document.getElementById("card-joyeria");
+    const modalJoyeria = document.getElementById("modal-joyeria");
 
-  cardJoyeria?.addEventListener("click", () => {
-    modalJoyeria?.classList.add("modal-active");
-  });
+    cardJoyeria?.addEventListener("click", () => {
+      modalJoyeria?.classList.add("modal-active");
+    });
 
-  const cardAntiguas = document.getElementById("card-antiguas");
-  const modalAntiguas = document.getElementById("modal-antiguas");
+    const cardAntiguas = document.getElementById("card-antiguas");
+    const modalAntiguas = document.getElementById("modal-antiguas");
 
-  cardAntiguas?.addEventListener("click", () => {
-    modalAntiguas?.classList.add("modal-active");
+    cardAntiguas?.addEventListener("click", () => {
+      modalAntiguas?.classList.add("modal-active");
+    });
   });
 </script>
