@@ -1,10 +1,46 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
+
+import imgBanner from "@/assets/img/contacto/bannerImg.webp";
+import LinkContact from "@/components/links/LinkContact.astro";
 ---
 
-<Layout title="Contacto" > 
+<Layout title="Contacto">
+  <section
+    class="bg-secondary-300 w-full pb-8
+    flex flex-col justify-center lg:flex-row lg:justify-start lg:items-center lg:gap-12 xl:gap-20"
+  >
+    <Image class={"w-full lg:w-auto"} src={imgBanner} alt={"contacto"} />
 
-    <section></section>
+    <div class="px-4 py-5 lg:max-w-3xl">
+      <h1
+        class="text-title text-white text-4xl lg:text-5xl mb-8 lg:mb-20 xl:mb-28"
+      >
+        Hagamos de tu historia, una pieza de joyería
+      </h1>
+      <div class="flex flex-col gap-8 mb-8 lg:mb-0 lg:gap-12 xl:gap-16">
+        <LinkContact
+          classColor="text-white"
+          labelText="E-mail"
+          text="contacto@adsatelier.mx"
+          url="mailto:contacto@adsatelier.mx"
+        />
+        <LinkContact
+          classColor="text-white"
+          labelText="WhatsApp"
+          text="+52 55 4099 6380"
+          url="https://api.whatsapp.com/send?phone=5215540996380"
+        />
+        <LinkContact
+          classColor="text-white"
+          labelText="Instagram"
+          text="@ads.atelier"
+          url="https://www.instagram.com/ads.atelier/"
+        />
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style></style>

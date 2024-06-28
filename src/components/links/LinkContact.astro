@@ -12,15 +12,15 @@ const { classColor, labelText, text, url } = Astro.props;
 ---
 
 <div class={`${classColor}`}>
-  <span class="text-base opacity-80">{labelText}</span>
+  <span class="text-base lg:text-2xl font-normal mb-8 opacity-80">{labelText}</span>
 
   <div class="flex">
     <div class="flex-1">
-      <a class="text-xl font-medium" href={url}>{text}</a>
+      <a class="text-xl lg:text-3xl font-medium" href={url}>{text}</a>
     </div>
 
     <a href={url} target="_blank">
-      <RiArrowRightUpLine className={classColor} />
+      <RiArrowRightUpLine className={`${classColor} lg:size-8`} />
     </a>
   </div>
 </div>
