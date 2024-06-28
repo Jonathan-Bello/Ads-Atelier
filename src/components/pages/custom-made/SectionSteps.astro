@@ -1,0 +1,93 @@
+---
+import { Image } from "astro:assets";
+
+import imgStep1 from "@/assets/img/custom/setp1.webp";
+import imgStep2 from "@/assets/img/custom/setp2.webp";
+import imgStep3 from "@/assets/img/custom/setp3.webp";
+---
+
+<section class="w-full bg-two-colors flex justify-center px-4 py-8">
+  <div class="container bg-accent-50 px-6 py-6
+  flex flex-col items-center">
+    <h2
+      class="text-title text-2xl lg:text-3xl text-center !font-normal text-primary-600 mb-8"
+    >
+      ¿Cómo hacer una <b class="font-semibold">pieza custom made</b> con nosotros?
+    </h2>
+
+    <ol class="flex-1 flex flex-col max-h-[32rem] overflow-auto">
+      <li
+        class="flex flex-col lg:grid lg:grid-cols-2 py-6 pl-8 sm:pl-12
+        relative before:content-['1'] before:absolute before:left-0 before:top-1 before:w-6 before:h-16
+        before:font-title before:font-bold before:text-5xl before:text-primary-500 before:bg-accent-50 before:z-10
+        after:content-[''] after:absolute after:left-[10px] after:top-3 after:w-[2px] after:h-full after:bg-accent-500"
+      >
+        <div class="">
+          <h3 class="text-primary-600 font-medium text-xl lg:text-2xl">
+            Contáctanos
+          </h3>
+          <p class="text-base lg:text-lg text-grey-950">
+            Contáctanos y agendaremos una cita. Aquí platicaremos sobre
+          </p>
+          <p class="text-base lg:text-lg text-grey-950 mb-4">
+            ✓ Nuestro proceso<br />
+            ✓ Tu inspiración y presupuesto<br />
+            ✓ Dirección del diseño que tienes en mente
+          </p>
+        </div>
+        <Image class={"flex-1"} src={imgStep1} alt={"imgStep"} />
+      </li>
+      <li
+        class="flex flex-col lg:grid lg:grid-cols-2 py-6 pl-8 sm:pl-12
+        relative before:content-['2'] before:absolute before:left-0 before:top-1 before:w-6 before:h-16
+        before:font-title before:font-bold before:text-5xl before:text-primary-500 before:bg-accent-50 before:z-10
+        after:content-[''] after:absolute after:left-[10px] after:top-4 after:w-[2px] after:h-full after:bg-accent-500"
+      >
+        <div class="">
+          <h3 class="text-primary-600 font-medium text-xl lg:text-2xl">
+            Iniciamos los bocetos
+          </h3>
+          <p class="text-base lg:text-lg text-grey-950 mb-4">
+            Después de nuestra cita te presentaremos las propuestas de diseño.
+          </p>
+        </div>
+        <Image class={"flex-1"} src={imgStep2} alt={"imgStep"} />
+      </li>
+      <li
+        class="flex flex-col lg:grid lg:grid-cols-2 py-6 pl-8 sm:pl-12
+        relative before:content-['3'] before:absolute before:left-0 before:top-1 before:w-6 before:h-16
+       before:font-title before:font-bold before:text-5xl before:text-primary-500 before:bg-accent-50 before:z-10
+        after:content-[''] after:absolute after:left-[10px] after:top-4 after:w-[2px] after:h-full after:bg-accent-500"
+      >
+        <div class="">
+          <h3 class="text-primary-600 font-medium text-xl lg:text-2xl">
+            Producción y entrega
+          </h3>
+          <p class="text-base lg:text-lg text-grey-950 mb-4">
+            Una vez aprobado el diseño, comenzará la producción de tu pieza. 
+            Este proceso toma de cuatro a seis semanas a partir de la
+            aprobación.
+          </p>
+        </div>
+        <Image class={"flex-1"} src={imgStep3} alt={"imgStep"} />
+      </li>
+
+      <li
+        class="pl-8 lg:pl-12  relative after:content-[''] after:absolute after:left-[10px] after:top-4 after:h-[2px] after:w-[2.5%] after:bg-accent-500"
+      >
+        <a
+          href="/contacto"
+          class="inline-block px-10 py-4 bg-accent-400 text-white text-base lg:text-lg font-medium rounded-full"
+          >Cotiza tu pieza</a
+        >
+      </li>
+    </ol>
+  </div>
+</section>
+
+<style>
+  .bg-two-colors {
+    background: linear-gradient(to bottom, #bbc6c3 20%, #d8ceb9 20%);
+    background-size: 100% 100%;
+  }
+</style>
