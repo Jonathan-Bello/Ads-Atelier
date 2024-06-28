@@ -12,8 +12,8 @@ const { id, title, imgBg } = Astro.props;
 
 <article
   id={id}
-  class="relative group border-b-4 border-secondary-500 max-h-[540px] overflow-hidden
-    hover:cursor-pointer hover:rounded-t-full hover:border-secondary-200 transition-[border-radius] duration-500 ease-[cubic-bezier(0.95,0.05,0.795,0.035)]"
+  class="cardCatalog relative group border-b-4 border-secondary-500 max-h-[540px] overflow-hidden
+    hover:cursor-pointer hover:rounded-t-full hover:border-secondary-200 transition-[border-radius] duration-500 ease-[cubic-bezier(0.54, 0.03, 0.28, 1.02)]"
 >
   <Image class={`object-center`} src={imgBg} alt={title} />
 
@@ -34,15 +34,11 @@ const { id, title, imgBg } = Astro.props;
         {title}
       </h3>
 
-      <a
-        href="#"
-        class="text-center text-base text-accent-50 text-red-900 underline"
-        >Ver más</a
+      <span
+        class="font-title text-center text-base lg:text-lg font-normal text-accent-50 underline"
+        >Ver más</span
       >
     </div>
   </div>
 </article>
 
-<style></style>
-
-<script></script>

@@ -4,15 +4,21 @@ import imgCompromiso from "@/assets/img/custom/compromiso.webp";
 import imgJoyeria from "@/assets/img/custom/joyeria.webp";
 import imgMatrimonio from "@/assets/img/custom/matrimonio.webp";
 import imgRediseno from "@/assets/img/custom/rediseno.webp";
+import ModalCarousel from "./ModalCarousel.astro";
 
-type Props = {};
-
-const {} = Astro.props;
+import {
+  imgsAntiguas,
+  imgsCompromiso,
+  imgsJoyeria,
+  imgsMatrimonio,
+} from "./importsImgs.astro";
 ---
 
 <section class="w-full bg-secondary-300 flex justify-center">
   <div class="container px-4 py-8 lg:py-12 flex flex-col justify-center">
-    <h2 class="text-title text-center text-white text-3xl lg:text-5xl mb-6 lg:mb-12">
+    <h2
+      class="text-title text-center text-white text-3xl lg:text-5xl mb-6 lg:mb-12"
+    >
       Tenemos la pieza que buscas
     </h2>
 
@@ -33,12 +39,45 @@ const {} = Astro.props;
         imgBg={imgJoyeria}
       />
       <CatalogCard
-        id="card-custom"
+        id="card-antiguas"
         title="Rediseño de piezas antiguas"
         imgBg={imgRediseno}
       />
     </div>
   </div>
+
+  <ModalCarousel id="modal-compromiso" imagesList={imgsCompromiso} />
+  <ModalCarousel id="modal-matrimonio" imagesList={imgsMatrimonio} />
+  <ModalCarousel id="modal-joyeria" imagesList={imgsJoyeria} />
+  <ModalCarousel id="modal-antiguas" imagesList={imgsAntiguas} />
 </section>
 
-<style></style>
+<script>
+  const cardCompromiso = document.getElementById("card-compromiso");
+  const modalCompromiso = document.getElementById("modal-compromiso");
+
+  cardCompromiso?.addEventListener("click", () => {
+    modalCompromiso?.classList.add("modal-active");
+  });
+
+  const cardMatrimonio = document.getElementById("card-matrimonio");
+  const modalMatrimonio = document.getElementById("modal-matrimonio");
+
+  cardMatrimonio?.addEventListener("click", () => {
+    modalMatrimonio?.classList.add("modal-active");
+  });
+
+  const cardJoyeria = document.getElementById("card-joyeria");
+  const modalJoyeria = document.getElementById("modal-joyeria");
+
+  cardJoyeria?.addEventListener("click", () => {
+    modalJoyeria?.classList.add("modal-active");
+  });
+
+  const cardAntiguas = document.getElementById("card-antiguas");
+  const modalAntiguas = document.getElementById("modal-antiguas");
+
+  cardAntiguas?.addEventListener("click", () => {
+    modalAntiguas?.classList.add("modal-active");
+  });
+</script>

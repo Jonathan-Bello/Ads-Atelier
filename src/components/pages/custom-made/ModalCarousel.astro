@@ -1,0 +1,81 @@
+---
+type Props = {
+  id: string;
+  imagesList: Array<ImageMetadata>;
+};
+
+const { id, imagesList } = Astro.props;
+
+import { RiCloseLargeLine } from "@remixicon/react";
+import { Image } from "astro:assets";
+import "swiper/css";
+---
+
+<section
+  id={id}
+  class="modal hidden fixed z-40 inset-0
+  w-full h-full max-h-[100vh] min-h-0 min-w-0
+bg-grey-900 bg-opacity-80 justify-center items-center"
+>
+  <div class="container px-4 relative">
+    <RiCloseLargeLine
+      className="modal-close text-grey-50 size-10 absolute -top-14 right-4 hover:cursor-pointer z-50"
+    />
+
+    <div class="swiper categoriaSwiper !overflow-visible md:!overflow-hidden">
+      <div class="swiper-wrapper">
+        {
+          imagesList.map((img) => (
+            <div class="swiper-slide">
+              <article class="flex items-center justify-center md:px-16 md:h-[28rem]">
+                <Image src={img} alt={"banner img"} />
+              </article>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="relative top-10 md:static">
+        <div class="swiper-button-prev after:text-grey-50"></div>
+      </div>
+      <div class="relative top-10 md:static">
+        <div class="swiper-button-next after:text-grey-50"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .modal-active {
+    display: flex;
+  }
+</style>
+
+<script>
+  // import Swiper bundle with all modules installed
+  import Swiper from "swiper/bundle";
+
+  // import styles bundle
+  import "swiper/css/bundle";
+
+  new Swiper(".categoriaSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  const modal = document.querySelectorAll(".modal");
+  const closeIcons = document.querySelectorAll(".modal-close");
+
+  closeIcons.forEach((icon) => {
+    icon?.addEventListener("click", () => {
+      console.log("bob");
+      modal.forEach((e) => {
+        e.classList.remove("modal-active");
+      });
+    });
+  });
+</script>
