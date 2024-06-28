@@ -20,7 +20,7 @@ const postsInstagram = await fetchInstagramData(url);
 
 {
   postsInstagram ? (
-    <Carouselnstagram client:visible posts={postsInstagram.data} />
+    <Carouselnstagram client:load posts={postsInstagram.data} />
   ) : (
     <br />
   )
