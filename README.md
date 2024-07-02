@@ -1,5 +1,5 @@
-# Tradeco Web Page
-Primer proyecto usando Astro.js, creado para la empresa Tradeco Costa Rica
+# Ads Atelier Web Page
+Landing Page creada usando Astro.js, para la empresa de joyeria ADS Atelier.
 
 Tecnologías usadas:
 
@@ -9,5 +9,8 @@ Tecnologías usadas:
 - Swipper.js
 - Web-Components
 - Implementación de API de Instagram
+- Netlify
+
+[adsatelier.mx](adsatelier.mx)
 
 Creado por Jonathan Alexis Bello López
