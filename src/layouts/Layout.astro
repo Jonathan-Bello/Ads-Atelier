@@ -16,12 +16,43 @@ const { title } = Astro.props;
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Estudio de joyería fina by Andrea Díaz" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    
+    
+    <!-- Metadatos para SEO -->
     <title>{title}</title>
+    <meta name="description" content="Estudio de joyería fina by Andrea Díaz" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content="Estudio de joyería fina by Andrea Díaz"
+    />
+    <meta name="keywords" content="Joyeria Custom Atelier Anillos Argollas Rediseño Fina" />
+    <meta
+      name="author"
+      content="Jonathan Alexis Bello Lopez - YGU COMUNICAXION"
+    />
+    <meta name="robots" content="index, follow" />
 
+    <!-- Metadatos de Open Graph para redes sociales (Facebook, Twitter, etc.) -->
+    <meta property="og:title" content="ADS Atelier" />
+    <meta
+      property="og:description"
+      content="Estudio de joyería fina by Andrea Díaz"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="adsatelier.mx" />
+    <meta property="og:image" content="/ogimage.webp" />
+    <meta property="og:site_name" content="ADS Atelier" />
+    <meta name="twitter:title" content="ADS Atelier" />
+    <meta
+      name="twitter:description"
+      content="Joyeria Custom Atelier Anillos Argollas Rediseño Fina"
+    />
+    <meta name="twitter:image" content="/ogimage.webp" />
+
+    <!-- Importaciones externas -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
