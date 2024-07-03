@@ -42,7 +42,7 @@ import isologo from "@/assets/svg/Isologo.svg";
     <div
       class="absolute bg-grey-950 h-full w-full flex justify-center bg-opacity-30 z-10"
     >
-      <Image src={isologo} alt="isologo" />
+      <Image id={"fade-isologo"} src={isologo} alt="isologo" />
     </div>
   </swiper-container>
 </section>
@@ -58,4 +58,20 @@ import isologo from "@/assets/svg/Isologo.svg";
   import { register } from "swiper/element/bundle";
   // register Swiper custom elements
   register();
+</script>
+
+<script>
+  document.addEventListener("scroll", () => {
+    const fadeElement = document.querySelector("#fade-isologo") as HTMLElement;
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    // Calcula la opacidad en función de la posición de scroll
+    let opacity = 1 - (scrollPosition * 2) / windowHeight;
+
+    // Asegúrate de que la opacidad esté en el rango de 0 a 1
+    opacity = Math.max(0, Math.min(1, opacity));
+
+    fadeElement.style.opacity = opacity.toString();
+  });
 </script>
