@@ -37,8 +37,8 @@ const InstagramSection: React.FC<Props> = ({ posts }) => {
             },
           }}
         >
-          {lastPost.map((post) => (
-            <SwiperSlide>
+          {lastPost.map((post, index) => (
+            <SwiperSlide key={index}>
               <div className="flex justify-start">
                 <a
                   className="sm:w-full"

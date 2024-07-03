@@ -84,17 +84,19 @@ const {} = Astro.props;
 </style>
 
 <script>
-  const menuBtn = document.getElementById("menu-btn");
-  const header = document.getElementById("header");
-  const navMenu = document.getElementById("nav-menu");
+  document.addEventListener("astro:page-load", () => {
+    const menuBtn = document.getElementById("menu-btn");
+    const header = document.getElementById("header");
+    const navMenu = document.getElementById("nav-menu");
 
-  menuBtn &&
-    menuBtn.addEventListener("click", () => {
-      header?.classList.toggle("bg-opacity-80");
+    menuBtn &&
+      menuBtn.addEventListener("click", () => {
+        header?.classList.toggle("bg-opacity-80");
 
-      // Clases que activan el mobile menu
-      navMenu?.classList.toggle("top-full");
-      navMenu?.classList.toggle("opacity-100");
-      navMenu?.classList.toggle("bg-opacity-80");
-    });
+        // Clases que activan el mobile menu
+        navMenu?.classList.toggle("top-full");
+        navMenu?.classList.toggle("opacity-100");
+        navMenu?.classList.toggle("bg-opacity-80");
+      });
+  });
 </script>
