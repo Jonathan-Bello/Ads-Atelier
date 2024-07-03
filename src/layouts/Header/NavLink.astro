@@ -37,8 +37,10 @@ const { url, text } = Astro.props;
 </style>
 
 <script>
-  const path = window.location.pathname;
-  const $link = document.getElementById(`NavLink-${path}`);
-  const urlLink = $link?.getAttribute("href");
-  path === urlLink && $link?.classList.toggle("selected");
+  document.addEventListener("astro:-load", () => {
+    const path = window.location.pathname;
+    const $link = document.getElementById(`NavLink-${path}`);
+    const urlLink = $link?.getAttribute("href");
+    path === urlLink && $link?.classList.toggle("selected");
+  });
 </script>

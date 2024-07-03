@@ -47,8 +47,10 @@ const {} = Astro.props;
     </nav>
 
     <div class="flex justify-center flex-grow lg:flex-grow-0 lg:-order-1">
-      <img src={logo.src} alt="logo mobile" class="max-w-44 lg:hidden" />
-      <img src={isologo.src} alt="logo desk" class="w-20 hidden lg:block" />
+      <a href="/">
+        <img src={logo.src} alt="logo mobile" class="max-w-44 lg:hidden" />
+        <img src={isologo.src} alt="logo desk" class="w-20 hidden lg:block" />
+      </a>
     </div>
 
     <div class="flex items-center gap-2">
