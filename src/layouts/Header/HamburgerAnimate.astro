@@ -7,7 +7,7 @@ type Props = {
 const { bgColor, color } = Astro.props;
 ---
 
-<button id="hamburger-btn" class="relative group">
+<button id="hamburger-btn" class="relative group overflow-hidden">
   <div
     class={`relative flex overflow-visible items-center justify-center w-[32px] h-[32px]
     transform transition-all ${bgColor}`}
