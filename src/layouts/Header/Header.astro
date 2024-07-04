@@ -12,10 +12,10 @@ const {} = Astro.props;
 
 <header
   id="header"
-  class={`w-full bg-grey-950 bg-opacity-30 blur-background
+  class={`w-full bg-[#2222224d] blur-background
     fixed top-0 z-30
     transition-colors delay-300 ease-out
-    lg:bg-opacity-30 lg:transition-none`}
+    lg:transition-none`}
 >
   <div
     class="relative flex justify-center items-center container p-2 lg:py-4 lg:px-0 mx-auto gap-4"
@@ -93,7 +93,7 @@ const {} = Astro.props;
 
     menuBtn &&
       menuBtn.addEventListener("click", () => {
-        header?.classList.toggle("bg-opacity-80");
+        header?.classList.toggle("bg-[#222222cc]");
 
         // Clases que activan el mobile menu
         navMenu?.classList.toggle("top-full");

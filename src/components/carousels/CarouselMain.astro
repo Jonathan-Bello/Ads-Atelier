@@ -8,14 +8,14 @@ import isologo from "@/assets/svg/Isologo.svg";
 ---
 
 <!-- Properties to resolve error when the parent is flexible  -->
-<section class="w-full h-full max-h-[100vh] min-h-0 min-w-0">
+<section class="w-full h-full max-h-[100vh] min-h-0 min-w-0
+ relative">
   <swiper-container
     loop="true"
     effect="fade"
     autoplay-delay="2500"
     allow-touch-move="false"
     pagination="true"
-    class="relative"
   >
     <swiper-slide>
       <Image
@@ -38,13 +38,12 @@ import isologo from "@/assets/svg/Isologo.svg";
         alt={"banner img"}
       />
     </swiper-slide>
-
-    <div
-      class="absolute bg-grey-950 h-full w-full flex justify-center bg-opacity-30 z-10"
-    >
-      <Image id={"fade-isologo"} src={isologo} alt="isologo" />
-    </div>
   </swiper-container>
+  <div
+    class="absolute inset-0 bg-grey-950 h-full w-full flex justify-center bg-opacity-30 z-10"
+  >
+    <Image id={"fade-isologo"} src={isologo} alt="isologo" />
+  </div>
 </section>
 
 <style is:global>
