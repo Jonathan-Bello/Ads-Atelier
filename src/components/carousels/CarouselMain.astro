@@ -7,40 +7,41 @@ import imgBanner3 from "@/assets/img/home/banner3.webp";
 import isologo from "@/assets/svg/Isologo.svg";
 ---
 
-<!-- Properties to resolve error when the parent is flexible  -->
-<section class="w-full h-full max-h-[100vh] min-h-0 min-w-0
- relative">
-  <swiper-container
-    loop="true"
-    effect="fade"
-    autoplay-delay="2500"
-    allow-touch-move="false"
-    pagination="true"
-  >
-    <swiper-slide>
-      <Image
-        class={"h-[40rem] lg:h-screen object-cover "}
-        src={imgBanner1}
-        alt={"banner img"}
-      />
-    </swiper-slide>
-    <swiper-slide>
-      <Image
-        class={"h-[40rem] lg:h-screen object-cover "}
-        src={imgBanner2}
-        alt={"banner img"}
-      />
-    </swiper-slide>
-    <swiper-slide>
-      <Image
-        class={"h-[40rem] lg:h-screen object-cover "}
-        src={imgBanner3}
-        alt={"banner img"}
-      />
-    </swiper-slide>
-  </swiper-container>
+<section class="w-full h-full max-h-[100vh] min-h-0 min-w-0">
+  <!-- Properties to resolve error when the parent is flexible  -->
+  <div class="">
+    <swiper-container
+      loop="true"
+      effect="fade"
+      autoplay-delay="2500"
+      allow-touch-move="false"
+      pagination="true"
+    >
+      <swiper-slide>
+        <Image
+          class={"h-[40rem] lg:h-screen object-cover "}
+          src={imgBanner1}
+          alt={"banner img"}
+        />
+      </swiper-slide>
+      <swiper-slide>
+        <Image
+          class={"h-[40rem] lg:h-screen object-cover "}
+          src={imgBanner2}
+          alt={"banner img"}
+        />
+      </swiper-slide>
+      <swiper-slide>
+        <Image
+          class={"h-[40rem] lg:h-screen object-cover "}
+          src={imgBanner3}
+          alt={"banner img"}
+        />
+      </swiper-slide>
+    </swiper-container>
+  </div>
   <div
-    class="absolute inset-0 bg-grey-950 h-full w-full flex justify-center bg-opacity-30 z-10"
+    class="absolute inset-0 bg-[#2222224d] h-[40rem] lg:h-screen w-full flex justify-center z-10"
   >
     <Image id={"fade-isologo"} src={isologo} alt="isologo" />
   </div>
