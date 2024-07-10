@@ -27,7 +27,7 @@ bg-grey-900 bg-opacity-80 justify-center items-center"
           imagesList.map((img) => (
             <div class="swiper-slide">
               <article class="flex items-center justify-center md:px-16 md:h-[28rem]">
-                <Image src={img} alt={"banner img"} />
+                <Image class={"aspect-[16/11] max-w-2xl"} src={img} alt={"banner img"} />
               </article>
             </div>
           ))
@@ -35,10 +35,16 @@ bg-grey-900 bg-opacity-80 justify-center items-center"
       </div>
 
       <div class="relative top-10 md:static">
-        <div class="swiper-button-prev after:text-grey-50 after:content-['prev']"></div>
+        <div
+          class="swiper-button-prev after:text-grey-50 after:content-['prev']"
+        >
+        </div>
       </div>
       <div class="relative top-10 md:static">
-        <div class="swiper-button-next after:text-grey-50 after:content-['next']"></div>
+        <div
+          class="swiper-button-next after:text-grey-50 after:content-['next']"
+        >
+        </div>
       </div>
     </div>
   </div>
