@@ -23,11 +23,11 @@ const { title } = Astro.props;
     <title>{title}</title>
     <meta name="description" content="Estudio de joyería fina by Andrea Díaz" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content="Estudio de joyería fina by Andrea Díaz" />
     <meta
-      name="description"
-      content="Estudio de joyería fina by Andrea Díaz"
+      name="keywords"
+      content="Joyeria Custom Atelier Anillos Argollas Rediseño Fina"
     />
-    <meta name="keywords" content="Joyeria Custom Atelier Anillos Argollas Rediseño Fina" />
     <meta
       name="author"
       content="Jonathan Alexis Bello Lopez - YGU COMUNICAXION"
@@ -65,10 +65,10 @@ const { title } = Astro.props;
 
     <ViewTransitions />
   </head>
-  <body>
+  <body class="min-h-screen flex flex-col">
     <Header />
 
-    <main class="flex flex-col items-center">
+    <main class="flex flex-col items-center flex-1">
       <slot />
 
       <BtnWhatsApp />
