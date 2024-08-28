@@ -1,4 +1,4 @@
-import { RiArrowRightLine } from "@remixicon/react";
+import { RiArrowRightLine, RiPlayFill } from "@remixicon/react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -39,14 +39,20 @@ const InstagramSection: React.FC<Props> = ({ posts }) => {
         >
           {lastPost.map((post, index) => (
             <SwiperSlide key={index}>
-              <div className="flex justify-start">
+              <div className="flex justify-start size-full">
                 <a
                   className="sm:w-full"
                   href={post.permalink}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={post.media_url} alt="banner img" />
+                  {post.media_url.includes(".mp4") ? (
+                    <div className="flex items-center justify-center w-full aspect-[4/5] bg-primary-300">
+                      <RiPlayFill widths={64} color="#6a5242" />
+                    </div>
+                  ) : (
+                    <img alt="post image" src={post.media_url} />
+                  )}
                 </a>
               </div>
             </SwiperSlide>
